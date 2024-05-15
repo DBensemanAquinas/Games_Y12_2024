@@ -43,5 +43,19 @@ def render_games():
     return render_template("games.html", games=games, type=type)
 
 
+@app.route("/search")
+def render_search():
+    search = request.args.get('search')
+    query = "SELECT * FROM game WHERE title LIKE ? OR platform LIKE ? OR genre LIKE ? OR publisher LIKE ?"
+    search = "%" + search + "%"
+    conn = create_connection(DATABASE)
+    conn.row_factory = sqlite3.Row
+    cur = conn.cursor()
+    cur.execute(query, (search, search, search, search))
+    games = cur.fetchall()
+    conn.close()
+    type = "list"
+    return render_template("games.html", games=games, type=type)
+
 if __name__ == '__main__':
     app.run()

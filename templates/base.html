@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Games | {% block title %}{% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="/static/style.css">
 </head>
 <body>
@@ -22,10 +22,19 @@
             <li>
                 <a href="/games?type=table">Games Table</a>
             </li>
+            <li>
+                <form action="/search">
+                    <label for="search">Search</label>
+                    <input type="text" name="search" id="search" />
+                    <input type="submit" value="Search" />
+                </form>
+            </li>
         </ul>
     </nav>
     
+    <main>
     {% block main%}{% endblock %}
+    </main>
 
     <footer>
         <p>&copy; D Benseman 2024</p>

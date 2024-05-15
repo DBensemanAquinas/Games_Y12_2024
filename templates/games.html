@@ -1,57 +1,68 @@
 {% extends "base.html" %}
 
+{% block title %}games{% endblock %}
 {% block main %}
 <h2>Games Data</h2>
+
+{% if type == 'list' %}
 <div class="games_container">
-    {% if type == 'list' %}
     {% for game in games %}
     <article>
-        <p><strong><a href="/games?sort=id">Rank:</a> </strong>{{ game['id'] }} </p>
-        <p><strong><a href="/games?sort=title">Game:</a> </strong>{{ game['title'] }} </p>
+        <p><strong><a href="/games?sort=id&type=list">Rank:</a> </strong>{{ game['id'] }} </p>
+        <p><strong><a href="/games?sort=title&type=list">Game:</a> </strong>{{ game['title'] }} </p>
         <p><strong>Platform: </strong><img src="/static/images/{{ game['platform'] }}.png" /></p>
-        <p><strong>Year: </strong>{{ game['year'] }} </p>
+        <p><strong>Genre: </strong>{{ game['genre'] }} </p>
+        <p><strong>Publisher: </strong>{{ game['publisher'] }} </p>
+        <h3>Sales in $Millions</h3>
+        <ul>
+        <li><strong>North America: </strong>{{ game['northamerica'] }} </li>
+        <li><strong>Europe: </strong>{{ game['europe'] }} </li>
+        <li><strong>Japan: </strong>{{ game['japan'] }} </li>
+        <li><strong>Rest of the World: </strong><u>{{ game['rest'] }}</u> </li>
+        <li><strong>Global: </strong>{{ game['global'] }} </li>
+        </ul>
     </article>
     {% endfor %}
-    {% else %}
-    <table>
-        <thead>
-            <tr>
-                <td rowspan="2"><a href="/games?sort=id">Rank</a></td>
-                <td rowspan="2"><a href="/games?sort=title">Game</a></td>		
-	            <td rowspan="2"><a href="/games?sort=platform">Platform</a></td>			
-                <td rowspan="2"><a href="/games?sort=year">Year</a></td>
-                <td rowspan="2"><a href="/games?sort=genre">Genre</a></td>
-                <td rowspan="2"><a href="/games?sort=publisher">Publisher</a></td>
-                <td>Sales in $Millions</td>
-			</tr>
-			<tr>
-                <td><a href="/games?sort=northamerica">North America</a></td>
-                <td><a href="/games?sort=europe">Europe</a></td>                
-                <td><a href="/games?sort=japan">Japan</a></td>
-                <td><a href="/games?sort=rest">Rest of World</a></td>
-                <td><a href="/games?sort=platform">Platform</a></td>
-                <td><a href="/games?sort=global">Global</a></td>                
-            </tr>
-        </thead>
-        {% for game in games %}
-        <tr>
-            <td>{{ game['id'] }}</td>
-            <td>{{ game['title'] }}</td>
-            <td>
-				{{ game['platform'] }} 
-				<img src="/static/images/{{ game['platform'] }}.png" />
-			</td>
-            <td>{{ game['year'] }}</td>
-            <td>{{ game['genre'] }}</td>
-            <td>{{ game['publisher'] }}</td>
-            <td>{{ game['northamerica'] }}</td>
-            <td>{{ game['europe'] }}</td>  
-            <td>{{ game['japan'] }}</td>
-            <td>{{ game['rest'] }}</td>
-            <td>{{ game['global'] }}</td>          
-        </tr>
-        {% endfor %}
-    </table>
-    {% endif %}
 </div>
+{% else %}
+<table>
+    <thead>
+        <tr>
+            <td rowspan="2"><a href="/games?sort=id">Rank</a></td>
+            <td rowspan="2"><a href="/games?sort=title">Game</a></td>		
+            <td rowspan="2"><a href="/games?sort=platform">Platform</a></td>			
+            <td rowspan="2"><a href="/games?sort=year">Year</a></td>
+            <td rowspan="2"><a href="/games?sort=genre">Genre</a></td>
+            <td rowspan="2"><a href="/games?sort=publisher">Publisher</a></td>
+            <td colspan="5">Sales in $Millions</td>
+        </tr>
+        <tr>
+            <td><a href="/games?sort=northamerica">North America</a></td>
+            <td><a href="/games?sort=europe">Europe</a></td>                
+            <td><a href="/games?sort=japan">Japan</a></td>
+            <td><a href="/games?sort=rest">Rest of World</a></td>
+            <td><a href="/games?sort=global">Global</a></td>                
+        </tr>
+    </thead>
+    {% for game in games %}
+    <tr>
+        <td>{{ game['id'] }}</td>
+        <td>{{ game['title'] }}</td>
+        <td>
+            {{ game['platform'] }} 
+            <img src="/static/images/{{ game['platform'] }}.png" />
+        </td>
+        <td>{{ game['year'] }}</td>
+        <td>{{ game['genre'] }}</td>
+        <td>{{ game['publisher'] }}</td>
+        <td>{{ game['northamerica'] }}</td>
+        <td>{{ game['europe'] }}</td>  
+        <td>{{ game['japan'] }}</td>
+        <td>{{ game['rest'] }}</td>
+        <td>{{ game['global'] }}</td>          
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+
 {% endblock %}
