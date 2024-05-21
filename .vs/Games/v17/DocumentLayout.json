@@ -40,9 +40,10 @@
               "RelativeDocumentMoniker": "templates\\base.html",
               "ToolTip": "C:\\Users\\dbenseman\\OneDrive - Aquinas College\\12TDT\\Games\\templates\\base.html",
               "RelativeToolTip": "templates\\base.html",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAABwAAAAxAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABIAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-05-15T23:10:36.362Z"
+              "WhenOpened": "2024-05-15T23:10:36.362Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -52,9 +53,10 @@
               "RelativeDocumentMoniker": "templates\\games.html",
               "ToolTip": "C:\\Users\\dbenseman\\OneDrive - Aquinas College\\12TDT\\Games\\templates\\games.html",
               "RelativeToolTip": "templates\\games.html",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAXAAAA",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAAAYAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-05-15T23:09:37.297Z"
+              "WhenOpened": "2024-05-15T23:09:37.297Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -64,7 +66,7 @@
               "RelativeDocumentMoniker": "app.py",
               "ToolTip": "C:\\Users\\dbenseman\\OneDrive - Aquinas College\\12TDT\\Games\\app.py",
               "RelativeToolTip": "app.py",
-              "ViewState": "AQIAACwAAAAAAAAAAAAAADAAAAA6AAAA",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAAADgAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
               "WhenOpened": "2024-05-15T23:08:52.507Z",
               "EditorCaption": ""

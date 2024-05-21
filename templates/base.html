@@ -30,6 +30,11 @@
                 </form>
             </li>
         </ul>
+        <ul>Genres
+            {% for genre in genres %}
+            <li><a href="/games?genre={{ genre['genre'] }}">{{ genre['genre'] }}</a></li>
+            {% endfor %}
+        </ul>
     </nav>
     
     <main>

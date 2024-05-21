@@ -1,10 +1,10 @@
 html {
-    background-color: #ffc;
+    background-color: #cff ;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 body {
-    background-color: #cff;
+    background-color: rgb(238, 142, 15);
     width: 900px;
     margin:auto;
 }
@@ -22,14 +22,15 @@ nav ul {
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 20px 0 0;
+    display: inline-block;
+    margin: 20px;
 }
 
 nav ul li a {
     color: #000;
     padding: 15px;
     background-color: #fff;
+
 }
 
 main h2 {
